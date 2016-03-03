@@ -37,5 +37,4 @@ void * studentsCount(int *Arr, int len, int score, int *lessCount, int *moreCoun
 
 	}
 	return NULL;
-	return NULL;
 }
