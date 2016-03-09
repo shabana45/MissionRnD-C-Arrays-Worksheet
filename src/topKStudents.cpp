@@ -20,7 +20,31 @@ struct student {
 	char *name;
 	int score;
 };
+//sorting in descending order
+void sort(struct student *students, int len){
+	int i,j;
+	for (i = 0; i < len; i++){
+		for (j = i+1; j < len; j++){
+			if (students[i].score < students[j].score){
+				struct student temp;
+				temp = students[i];
+				students[i] = students[j];
+				students[j] = temp;
+			}
+		}
+	}
+}
+struct student ** topKStudents(struct student *students, int len, int K)
+    {
 
-struct student ** topKStudents(struct student *students, int len, int K) {
-	return NULL;
+	if ( K <= 0||students == NULL||len<=0)
+	 return NULL;
+	else
+	{
+		struct student **top =(struct student**)calloc(K, sizeof(struct student));
+		sort(students, len);
+		for (int i = 0; i < K; i++)
+			top[i] = &students[i];
+		return top;
+	}
 }
