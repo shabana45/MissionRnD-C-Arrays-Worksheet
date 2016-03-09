@@ -21,6 +21,7 @@ int * sortedArrayInsertNumber(int *Arr, int len, int num)
 		return 0;
 	else
 	{
+		Arr = (int *)realloc(Arr,(len+1)*sizeof(int));
 		int pos;
 		for (i = 0; i < len; i++) {
 			if (num <= Arr[i])
